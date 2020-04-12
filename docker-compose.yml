@@ -1,0 +1,30 @@
+version: '3'
+services:
+  # postgres:
+  #   image: postgres
+  #   environment:
+  #     - POSTGRES_PASSWORD=passw0rd
+  #   ports:
+  #     - '5432:5432'
+  server:
+    build:
+      context: ./server/
+    command: npm run start
+    volumes:
+      - ./server/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - '8080:8080'
+    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+  client:
+    build:
+      context: ./client/
+    command: npm run dev
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - '4001:4000'

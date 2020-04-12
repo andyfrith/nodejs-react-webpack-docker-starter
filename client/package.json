@@ -1,0 +1,34 @@
+{
+  "name": "nodejs-react-docker-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack--config ./webpack.config.prod.js --mode production",
+    "watch": "webpack --watch --config ./webpack.config.js --mode development",
+    "dev": "webpack-dev-server --host 0.0.0.0",
+    "prod": "webpack-dev-server --mode production --host 0.0.0.0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/webpack": "^4.41.10",
+    "css-loader": "^3.5.2",
+    "error-overlay-webpack-plugin": "^0.4.1",
+    "html-webpack-plugin": "^4.2.0",
+    "terser-webpack-plugin": "^2.3.5",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
